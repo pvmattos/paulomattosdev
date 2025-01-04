@@ -3,8 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import { useTheme } from "next-themes";
-import { Moon, Sun } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Home() {
