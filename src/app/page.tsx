@@ -219,24 +219,4 @@ const skillCategories = [
   },
  
 ];
-
-const projects = [
-  {
-    title: "E-commerce Platform",
-    description: "Plataforma completa de e-commerce com painel administrativo e análise de dados.",
-    image: "/projects/ecommerce.jpg",
-    technologies: ["Next.js", "Node.js", "PostgreSQL", "AWS"]
-  },
-  {
-    title: "Sistema de Gestão",
-    description: "Sistema ERP para gestão empresarial com múltiplos módulos integrados.",
-    image: "/projects/erp.jpg",
-    technologies: ["React", "Java Spring", "Docker", "MongoDB"]
-  },
-  {
-    title: "App de Delivery",
-    description: "Aplicativo mobile para delivery com rastreamento em tempo real.",
-    image: "/projects/delivery.jpg",
-    technologies: ["React Native", "Node.js", "Socket.io", "Redis"]
-  }
-];
+;
