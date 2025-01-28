@@ -6,8 +6,8 @@ import { ThemeProvider } from "next-themes";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Sua Landing Page",
-  description: "Uma landing page moderna criada com Next.js e shadcn/ui",
+  title: 'Paulo Mattos | Full Stack Developer & Software Architect',
+  description: 'Full Stack Developer and Software Architect specialized in modern agile development architectures.',
 };
 
 export default function RootLayout({
