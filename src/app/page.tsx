@@ -33,7 +33,10 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
+
       <section id="inicio" className="container flex flex-col items-center justify-center space-y-8 pt-32 pb-40 text-center">
+      <span className="text-blue-500 font-semibold">Certified Bubble.io Developer</span>
+
         <div className="space-y-4">
           <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
           Full Stack Developer
@@ -42,9 +45,10 @@ export default function Home() {
           </h1>
           
           <p className="max-w-[700px] text-gray-400 md:text-xl/relaxed lg:text-xl/relaxed xl:text-2xl/relaxed">
-Turning ideas into real, robust, and scalable solutions.
+            Turning ideas into real, robust, and scalable solutions.
             <br />
             Specialized in modern agile development architectures.
+            <br />
           </p>
         </div>
 
@@ -112,6 +116,39 @@ Turning ideas into real, robust, and scalable solutions.
         </div>
       </section>
 
+      <section className="container py-16">
+        <h2 className="text-3xl font-bold text-center mb-12">Recent Experience</h2>
+        <div className="grid grid-cols-1 gap-6">
+          {experiences.map((exp, i) => (
+            <Card key={i} className="hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <CardTitle className="text-xl">{exp.role}</CardTitle>
+                    <CardDescription className="text-blue-500 font-medium">{exp.company}</CardDescription>
+                  </div>
+                  <Badge variant="outline">{exp.period}</Badge>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc list-inside space-y-2 text-gray-500 dark:text-gray-400">
+                  {exp.responsibilities.map((resp, j) => (
+                    <li key={j}>{resp}</li>
+                  ))}
+                </ul>
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {exp.technologies.map((tech, j) => (
+                    <Badge key={j} variant="outline">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
       {/* Nova Seção - Projetos }
       <section className="container py-16">
         <h2 className="text-3xl font-bold text-center mb-12">Projetos em Destaque</h2>
@@ -150,11 +187,11 @@ Turning ideas into real, robust, and scalable solutions.
           <h2 className="text-3xl font-bold">
             Ready to start?
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 max-w-[600px] mx-auto">
+          <p className="text-gray-500 dark:text-gray-400 max-w-[600px] mx-auto mb-2">
             Get in touch and transform your business!
           </p>
           <a href="https://calendly.com/paulovsmattoss/30min">
-            <Button size="lg" className="rounded-full">
+            <Button size="lg" className="rounded-full mt-4">
               Schedule a meeting
             </Button>
           </a>
@@ -165,13 +202,13 @@ Turning ideas into real, robust, and scalable solutions.
       <footer className="border-t">
         <div className="container py-12 flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center gap-4 mb-4 md:mb-0">
-            <Image
+           {/* <Image
               src="/next.svg"
               alt="Logo"
               width={100}
               height={24}
               className="dark:invert"
-            />
+            />*/}
           </div>
           <div className="text-sm">
             Created and developed by Paulo Mattos
@@ -219,4 +256,43 @@ const skillCategories = [
   },
  
 ];
-;
+
+const experiences = [
+  {
+    role: "Senior Full Stack Developer",
+    company: "Support Dept",
+    period: "2024 - Present",
+    responsibilities: [
+      "I work on the development of large-scale projects, focusing on backend architecture and system integrations. One of the key projects I contribute to is a marketing intelligence platform that connects to Meta and Google APIs, enabling users to analyze data and optimize their media and marketing strategies. This involves managing integrations using n8n, handling authentication with OAuth, and integrating self-hosted open-source systems with no-code and low-code platforms.",
+
+"Additionally, I work on the development of a gamified educational platform with thousands of students, designed to enhance skill development through interactive learning and reward-based engagement.",
+"I also develop custom backend solutions, including microservices, API management, and automated workflows using JavaScript and n8n. These implementations ensure seamless data processing, system scalability, and overall operational efficiency.","AI solutions are integrated into Bubble-based platforms to enhance automation and user experience. This includes implementing AI-powered features such as meeting summary generation, automated task creation, and interactive chat capabilities. By leveraging AI models and APIs, seamless processing of user inputs is enabled, improving efficiency and engagement within the applications."   ],
+    technologies: ["Bubble.io", "Supabase", "Next.js", "N8N", "Docker","RecallAI","OpenAI","More+"]
+  },
+  {
+    role: "Project manager and technical reference",
+    company: "Hamurabi Apps",
+    period: "2024 - 2024",
+    responsibilities: [
+      "Managed development teams across multiple projects",
+      "Established technical standards and best practices",
+      "Implemented agile methodologies and quality control procedures",
+      "Conducted application reviews and provided technical guidance",
+      "Conducting meetings with clients to close sales",
+      "Training employees on best development practices with Bubble and other technologies."
+    ],
+    technologies: ["Project Management", "Bubble.io", "Integration API", "Team Leadership", "Technical Architecture"]
+  },
+  {
+    role: "Senior Full Stack Developer",
+    company: "Hamurabi Apps",
+    period: "2024 - 2024",
+    responsibilities: [
+      "Developing large-scale projects with Bubble.io.",
+      "Integration of platforms with their own backends in Bubble.io",
+      "Large-scale API integration in projects with thousands of users",
+      "Integration with microservices to support large projects"
+    ],
+    technologies: ["Bubble.io", "Integration API", "MongoDB", "Supabase"]
+  }
+];
